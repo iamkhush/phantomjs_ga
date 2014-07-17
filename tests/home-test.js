@@ -20,9 +20,6 @@ describe("Viget Home Test", function() {
         link.click();
 
         assert.called(spy);
-        // assert.calledWith(spy, [
-        //     '_trackEvent', 'Outbound Links', 'Click', 'Pointless Corp.'
-        // ]);
 
     });
 
