@@ -6,4 +6,4 @@
 
 ### Run it:
 
-`phantomjs test-runner.js`
+'phantomjs --ignore-ssl-errors=true --load-images=no test-runner.js >> log.txt'

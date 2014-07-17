@@ -20,31 +20,14 @@
 
         var out = [];
 
-        runner.on('start', function() {
-            out.push([ "Testing",  window.location.href, "\n"]);
-        });
-
-        runner.on('suite', function(suite) {
-            out.push([suite.title]);
-        });
-
         runner.on("pass", function(test) {
 
-            if ('fast' == test.speed) {
-                out.push([ color('checkmark', '  ✓ '), test.title, "\n" ]);
-            } else {
-                out.push([
-                    color('checkmark', '  ✓ '),
-                    test.title,
-                    color(test.speed, test.duration + "ms"),
-                    '\n'
-                ]);
-            }
+            out.push([ color('checkmark', '  ✓ '), "True", "\n" ]);
 
         });
 
         runner.on('fail', function(test, err) {
-            out.push([ color('fail', '  × '), color('fail', test.title), ":\n    ", err ,"\n"]);
+            out.push([ color('fail', '  × '), color('False'), "\n"]);
         });
 
         runner.on("end", function() {

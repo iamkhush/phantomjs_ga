@@ -1,6 +1,6 @@
 var page = require("webpage").create();
 
-page.open("http://www.viget.com", function(status) {
+page.open("https://secure.bestfriends.org/page/contribute/givenkla", function(status) {
     
     if (status !== 'success') {
         console.error("Failed to open", page.frameUrl);
@@ -18,7 +18,7 @@ page.open("http://www.viget.com", function(status) {
     page.evaluate(function() {
         
         // Undefine GA
-	      window._gat = undefined;
+	    window._gat = undefined;
         window._gaq = [['_setAccount', 'UA-00000000-1']];
         
         // Run tests
@@ -28,6 +28,6 @@ page.open("http://www.viget.com", function(status) {
 });
 
 page.onCallback = function(data) {
-    data.message && console.log(data.message);
+    data.message && console.log(Date()+" "+data.message);
     data.exit && phantom.exit();
 };
